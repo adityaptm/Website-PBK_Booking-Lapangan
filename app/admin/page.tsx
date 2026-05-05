@@ -73,8 +73,8 @@ export default function AdminDashboard() {
     setUpdatingId(id);
     
     try {
-      const { error } = await supabase
-        .from('bookings')
+      const { error } = await (supabase
+        .from('bookings') as any)
         .update({ status })
         .eq('id', id);
 
